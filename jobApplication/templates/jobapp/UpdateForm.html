@@ -1,0 +1,170 @@
+<!-- inheriting the data from the HTML page Base.html -->
+{% extends "jobapp/Base.html" %}
+
+<!-- declaring the block for title -->
+{% block title %}
+Updation Form
+{% endblock title %}
+
+<!-- declaring the block for body -->
+{% block body %}
+
+<form method="POST" action="" id="form" novalidate>
+    {% csrf_token %}
+
+   <!-- full_name -->
+
+               <!-- label for full_name-->
+               <div id="fullname-label-field">
+                  {{form.full_name.label}}
+                  <sup>*</sup>
+               </div>
+
+               <!-- input field for full_name -->
+               <div id="input-field">
+                  {{form.full_name}}
+               </div> 
+
+               <!-- block to display errors in full_name -->
+               <div id="error-fname"></div>
+ 
+   <!-- phone_number -->
+
+               <!-- label for phone_number-->
+               <div id="label-field">
+                  {{form.phone_number.label}}
+                  <sup>*</sup>
+               </div>
+
+               <!-- input field for phone_number -->
+               <div id="input-field">
+                  {{form.country_code}}
+                  {{form.phone_number}}
+               </div>
+
+               <!-- block to display errors in phone_number -->
+               <div id="error-phone"></div>
+   
+   <!-- email_id -->
+
+               <!-- label for email_id -->
+               <div id="label-field">
+                  {{form.email_id.label}}
+                  <sup>*</sup>
+               </div>
+
+               <!-- input field for email_id -->
+               <div id="input-field">
+                  {{form.email_id}}
+               </div>
+
+               <!-- block to display errors in email_id-->
+               <div id="error-email"></div>
+   
+   <!-- date_of_birth -->
+
+               <!-- label for dob field -->
+               <div id="label-field">
+                  {{form.dob.label}}
+                  <sup>*</sup>
+               </div>
+
+               <!-- input for dob field -->
+               <div id="input-field">
+                  {{form.dob}}
+               </div>
+
+               <!-- block to display errors in dob -->
+               <div id="error-dob"></div>
+
+   <!-- gender -->
+
+               <!-- label for gender field -->
+               <div id="label-field">
+                  {{form.gender.label}}
+                  <sup>*</sup>
+               </div>
+
+               <!-- input field for gender -->
+               <div id="input-field">
+                  {{form.gender}}
+               </div>
+
+               <!-- block to display errors in gender -->
+               <div id="error-gender"></div>
+   
+   <!-- experience -->
+
+               <!-- label for experience field -->
+               <div id="label-field">
+                     {{form.years.label}}
+               </div>
+
+               <!-- input field for years and months -->
+               <div id="input-field">
+                  {{form.years}}
+                  {{form.months}}
+               </div>
+
+   <!-- job_role -->
+
+               <!-- label for job_role -->
+               <div id="label-field">
+                  {{form.job_role.label}}
+                  <sup>*</sup>
+               </div>
+
+               <!-- input field for job_role -->
+               <div id="input-field">
+                  {{form.job_role}}
+               </div>
+
+               <!-- block to display errors in job_role -->           
+               <div id="error-role"></div>
+   
+   <!-- address block -->
+
+               <!-- label for address field -->
+               <div id="label-field">
+                  {{form.address_line_1.label}}
+               </div>
+
+               <!-- input field for address line 1 -->          
+               <div id="input-field">
+                  {{form.address_line_1}}
+               </div>
+
+               <!-- input field for address line 2 -->  
+               <div id="input-field">
+                  {{form.address_line_2}}
+               </div>
+
+               <!-- input field for district -->  
+               <div id="input-field">
+                  {{form.city}}
+               </div>
+
+               <!-- input field for state -->  
+               <div id="input-field">
+                  {{form.state}}
+               </div>
+
+               <!-- input field for country -->  
+               <div id="input-field">
+                  {{form.country}}
+               </div>
+
+               <!-- input field for zip_code -->  
+               <div id="input-field">
+                  {{form.zip_code}}
+               </div>
+
+               <!-- submit button for form  -->  
+               <div id="field-row1">
+                  <input type="submit" value="Submit" class="submit">
+               </div>
+</form>
+
+{% endblock body %}
+
+

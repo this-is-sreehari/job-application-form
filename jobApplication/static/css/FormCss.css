@@ -1,0 +1,324 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.formContainer
+{
+    background-color: white;
+    /* background-image: linear-gradient(to right top, #c0c4ca, #bfc7cb, #c0caca, #c4cdc8, #cbcec7); */
+    width: 45%;
+    height: 60%;
+    border-radius: 12px;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 60px;
+    padding-bottom: 5px;
+    box-shadow:  0 0 5px #000000;
+   
+}
+#field-row{
+    padding-top: 3px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 99%;
+    /* background-color: blue; */
+    justify-content: space-evenly;
+}
+
+#field-row1{
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 5px;
+    margin: 5px;
+    width: 97%;
+}
+
+
+body{
+    background-color: #BEADFA;
+    /* background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12); */
+}
+
+label:not(.select-label){
+    padding-top: 4%;
+    padding-bottom: 2px;
+    padding-left: 9px;
+}
+
+
+input[type="text"],input[type="email"]{
+    border: hidden;
+    border-bottom: 1px inset;
+    padding: 10px;
+    width: 100%;
+    height: 30px;
+    background: none;
+
+}
+
+input[name="phone-inp"]{
+    margin-left: 5px;
+    width: 100%;
+    background: none;
+}
+
+
+input[type="text"]::placeholder,input[type="email"]::placeholder{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight:lighter;
+    opacity: 0.5;
+    font-size: 14px;
+   
+}
+
+input[type="date"] {
+    border: hidden;
+    width: 100%;
+    height: 30px;
+    padding: 10px;
+    background: none;
+    border-bottom: 1px inset;
+}
+
+select {
+    border: hidden;
+    height: 30px;
+    width: 20%;
+    padding-left: 8px;   
+}
+
+input[type="submit"]  {
+    border: hidden;
+    height: 40px;
+    width: 140px;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0 auto;
+    margin-top: 3%;
+    margin-bottom: 15px;
+    color: white;
+    background-color: blue;
+}
+
+
+select[name="experience-years"],
+select[name="experience-months"],
+select[name="phone"] {
+    width: 48%;
+    background: none;
+    margin-top: 5px;
+    border-bottom: 1px inset;
+    color: rgb(68, 67, 67);
+}
+
+select[name="job-role"]{
+    width:100%;
+    background: none;
+    border-bottom: 1px inset;
+    color: rgb(68, 67, 67);
+}
+
+select[name="country-code"] {
+    background: none;
+    border-bottom: 1px inset;
+}
+
+#error-fname,
+#error-phone,
+#error-email,
+#error-dob,
+#error-role,
+#error-gender {
+    font-size: 13px;
+    margin-left: 19.75px;
+    color: red;   
+}
+
+.title{
+    text-align: center;
+    font-size: 40px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+
+.submit:hover {
+    transform: scale(1.05);
+}
+.submit{
+    cursor: pointer;
+    outline: none;
+}
+
+#job-role option:first-child{
+    display: none;
+}
+
+#experience-months option:first-child{
+    display: none;
+}
+
+#experience-years option:first-child{
+    display: none;
+}
+
+sup{
+    color: red;
+    padding-left: 2px;
+    font-size: 18px;
+}
+
+/* Mobile view  */
+@media (max-width:500px){
+   
+    .formContainer
+    {
+        width: 90%;
+        height: auto;
+    }
+   
+    label{
+        padding-top: 2%;
+    }
+}
+
+
+/* For newly created Django Model Form */
+
+/* for label of input fields */
+#label-field{
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 5px;
+    margin: 5px;
+    margin-top: 10px;
+    width: 97%;
+}
+
+/* for the label of full name field */
+#fullname-label-field{
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 5px;
+    margin: 5px;
+    padding-top: 15px;
+    width: 97%;
+}
+
+/* for the input fields */
+#input-field{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-top: 5px;
+    padding-left: 5px;
+    margin: 5px;
+    margin-top: 6px;
+    width: 97%;
+}
+
+/* the full name field */
+.full_name{
+    max-width: 600px;
+    outline: none;
+}
+
+/* country code */
+.country_code {
+    background: none;
+    border-bottom: 1px inset;
+    outline: none;
+}
+
+/* phone number */
+.phone_number {
+    margin-left: 10px;
+    outline: none;
+}
+
+/* email id */
+.email_id{
+    max-width: 600px;
+    outline: none;
+}
+
+/* date of birth */
+.dob{
+    outline: none;
+}
+
+/* gender */
+.gender {
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 4px;
+    margin-right: 10px;
+    accent-color: blue;
+}
+
+/* years */
+.years{
+    width: 49%; margin-right: 13px;
+    background: none;
+    border-bottom: 1px inset;
+    outline: none;
+}
+
+/* to hide the first value in select field */
+.years option:first-child{
+    display: none;
+}
+
+/* months */
+.months{
+    width: 49%;
+    background: none;
+    border-bottom: 1px inset;
+    outline: none;
+}
+
+/* to hide the first value in select field */
+.months option:first-child{
+    display: none;
+}
+
+/* job role */
+.job_role{
+    width: 100%;
+    background: none;
+    border-bottom: 1px inset;
+    outline: none;
+}
+
+/* to hide the first value in select field */
+.job_role option:first-child{
+    display: none;
+}
+
+/* address fields */
+.address_fields{
+    max-width: 600px;
+    outline: none;
+}
+
+/* to highlight the fields */
+.full_name:focus,
+.phone_number:focus,
+.country_code:focus,
+.email_id:focus,
+.dob:focus,
+.address_fields:focus,
+.years:focus,
+.months:focus,
+.job_role:focus{
+    border: 1.5px solid blue;
+    border-radius: 4px;
+}
+

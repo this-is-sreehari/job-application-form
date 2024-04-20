@@ -1,0 +1,83 @@
+.formContainer
+{
+    border: 2px;
+    border-radius: 5px;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 60px;
+    padding-bottom: 5px;
+    box-shadow:  0 0 2px #000000;
+       
+}
+
+#field-row{
+    padding-top: 0px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    /* background-color: blue; */
+    justify-content: center;
+}
+
+
+.title {
+    text-align: center;
+   
+    margin-top: 25px;
+    font-size: 40px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+body{
+    background-color: #BEADFA;
+    /* background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12); */
+}
+
+/* warning box */
+.deletion-warning{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.button-group
+{
+    display: flex;
+}
+
+/* yes button */
+.delete-yes{
+    border: hidden;
+    height: 40px;
+    width: 140px;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    background-color: rgb(240, 38, 38);
+    margin-right: 20px;
+}
+
+.delete-yes:hover, .delete-no:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+/* delete no */
+.delete-no{
+    border: hidden;
+    height: 40px;
+    width: 140px;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    background-color: rgb(13, 187, 100);
+}

@@ -1,0 +1,42 @@
+<!-- to load static content -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Custom block to define page title -->
+    <title>
+    {% block title %}{% endblock title %}    
+    </title>
+
+    <!-- linking the external stylesheet with the HTML page -->
+    <link rel="stylesheet" href="{% static 'css/FormCss.css' %}">
+
+</head>
+<body>
+        <div id="field-row">
+          <h2 class="title">Job Application Form</h2>
+        </div>
+
+        <!-- Form to implement navigation button -->
+        <div id="field-row">
+            <form action="{% url 'index' %}">
+                <input type="submit" value="Back to Home" class="submit">
+            </form>
+        </div>
+
+        <!-- creating a container -->
+        <div class="formContainer">
+            <!-- declaring a block to pass data to this container -->
+            {% block body %}
+            {% endblock body %}
+        </div> 
+
+        <!-- linking the external JS file with the HTML page -->
+        <script defer type="text/javascript" src="{% static 'js/FormValidation.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!-- load static files -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Applicant</title>
+    <!-- linking external stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/DeletePage.css' %}">
+
+</head>
+<body>
+        <div id="field-row">
+          <h2 class="title">Delete Applicant</h2>
+        </div>
+        <div id="field-row">
+        
+        </div>
+        <div class="formContainer">
+
+           <div id="field-row">
+              <div class ="deletion-warning"> Are you sure you want to delete ?</div>
+           </div>
+
+           <div id="field-row">
+            <div class="button-group">
+
+            <form action="" method="POST" id="form">
+                {% csrf_token %}
+                <input type="submit" value="Yes" class="delete-yes">
+            </form>
+            <a href="{% url 'index' %}">
+                <button type="submit" class="delete-no">No</button>
+            </a>
+        </div>
+           </div>
+     </div>     
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!-- to load static files -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+
+    <!-- load external stylesheet -->
+    <link rel="stylesheet" href="{% static "css/HomePageCSS.css" %}">
+</head>
+<body>
+    <div id="field-row">
+        <h2 class="title">Hello Job Seekers!</h2>   
+    </div>
+  
+          <!-- if block to display alert/warning messages from the view -->
+          {% if messages %}
+
+              <div id="alert-box">
+                  <!-- for loop to display the message -->
+                  {% for message in messages %}
+                      {{message}}
+                  {% endfor %}
+                  <!-- block to display close button -->
+                  <span class="close">&times;</span>
+              </div>
+
+          {% endif %}
+
+    <!-- to add new applicant -->
+    <div id="field-row"> 
+        <form action="{% url 'add' %}">
+            <input type="submit" value="Add New Applicant" class="btn">
+        </form>
+    </div>
+
+    <!-- search bar -->
+    <div id="field-row"> 
+        <form action="">
+            <input type="text" placeholder="Search.." class="search">
+        </form>
+    </div>
+    
+    <!-- declaring container -->
+    <div class="container">
+        
+        <!-- declaring unordered list for listing data -->
+        <ul class="listing-table">
+          
+          <!-- table header portion -->
+          <li class="table-header">
+            <div class="col-1">Sl No</div>
+            <div class="col-2">Name</div>
+            <div class="col-3">Email</div>
+            <div class="col-4">Contact</div>
+            <div class="col-5">Role</div>
+            <div class="col-6">Edit</div>
+            <div class="col-7">Delete</div>
+          </li>
+
+          <!-- for loop for listing values -->
+          {% for value in values %} 
+          <li class="table-row">  
+              <div class="col-1">{{forloop.counter}}</div>
+              <div class="col-2">{{value.full_name}}</div>
+              <div class="col-3">{{value.email_id}}</div>
+              <div class="col-4">{{value.country_code}} {{value.phone_number}}</div>
+              <div class="col-5">{{value.job_role}}</div>
+
+              <!-- editing applicant data -->
+              <div class="col-6">
+                  <form action="{% url 'update' value.id %}">
+                  <button type="submit" class="bttn"><img src="{% static 'icons/edit_icon.png'%}"></button>
+                  </form>
+              </div>
+
+              <!-- delete applicant data -->
+              <div class="col-7">
+                  <form action="{% url 'delete' value.id %}">
+                    <button type="submit" class="bttn"><img src="{% static 'icons/delete.png'%}"></button>
+                  </form>
+              </div>  
+          </li>
+          {% endfor %}
+        
+        </ul>
+      </div>
+      <!-- linking external js file to HTML page -->
+      <script src="{% static "js/HomePage.js" %}"></script>
+</body>
+</html>
